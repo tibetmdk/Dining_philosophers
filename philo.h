@@ -14,8 +14,11 @@
 # define LIGHT_BLUE	"\033[1;34m"	// light blue 
 # define RST		"\033[0m"	// reset
 
-# define INT_MAX 2147483647
-# define mtx_t   pthread_mutex_t
+# define INT_MAX	2147483647
+# define mtx_t		pthread_mutex_t
+# define FALSE		0
+# define TRUE		1
+
 //-- Structs --
 typedef struct s_data t_data;
 
@@ -31,8 +34,8 @@ typedef struct s_philo
 	int			is_philo_full;
 	int			meal_count;
 	int			thread_id;
-	int			last_meal_time;
-	t_data		data;
+	long		last_meal_time;
+	t_data		*data;
 	t_fork		*left_fork;
 	t_fork		*right_fork;
 }				t_philo;
@@ -40,9 +43,9 @@ typedef struct s_philo
 struct s_data
 {
 	int			philo_number;
-	int			time_to_die;
-	int			time_to_sleep;
-	int			time_to_eat;
+	long		time_to_die;
+	long		time_to_sleep;
+	long		time_to_eat;
 	int			limit_of_meals;
 	int			simulation_finished;
 	t_philo		*philos;

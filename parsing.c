@@ -51,12 +51,12 @@ static long	ft_atol(const char *str)
 void	parse_input(t_data *data, char **av)
 {
 	data->philo_number = ft_atol(av[1]);
-	data->time_to_die = ft_atol(av[2]) * 1000;
-	data->time_to_eat = ft_atol(av[3]) * 1000;
-	data->time_to_sleep = ft_atol(av[4]) * 1000;
-	if (data->time_to_die < 60000
-		|| data->time_to_eat < 60000
-		|| data->time_to_sleep < 60000)
+	data->time_to_die = ft_atol(av[2]);
+	data->time_to_eat = ft_atol(av[3]);
+	data->time_to_sleep = ft_atol(av[4]);
+	if (data->time_to_die < 60
+		|| data->time_to_eat < 60
+		|| data->time_to_sleep < 60)
 		error_exit("Use timestamps major than 60ms");
 	if (av[5])
 		data->limit_of_meals = ft_atol(av[5]);

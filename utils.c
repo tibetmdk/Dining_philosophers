@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 23:34:29 by tmidik            #+#    #+#             */
-/*   Updated: 2025/05/14 18:12:15 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/05/16 22:23:31 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ void	print_action(t_philo *philo, char *msg)
 	timestamp = get_time() - philo->data->start_time;
 	pthread_mutex_unlock(&philo->data->data_mutex);
 	pthread_mutex_lock(&philo->data->print_mutex);
-	printf("%ld %d %s\n", timestamp, philo->id, msg);
+	printf("%s%ld %s%d %s%s\n", GREEN,timestamp, LIGHT_BLUE, philo->id, RST, msg);
 	pthread_mutex_unlock(&philo->data->print_mutex);
 }

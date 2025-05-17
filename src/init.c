@@ -6,11 +6,11 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 00:27:41 by tmidik            #+#    #+#             */
-/*   Updated: 2025/05/14 14:37:20 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/05/17 14:17:50 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 static void	assigning_forks(t_philo *philo, t_fork *forks, int position)
 {

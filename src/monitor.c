@@ -6,11 +6,11 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 17:46:50 by tmidik            #+#    #+#             */
-/*   Updated: 2025/05/14 17:56:11 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/05/17 14:17:55 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 static int check_death(t_data *data)
 {

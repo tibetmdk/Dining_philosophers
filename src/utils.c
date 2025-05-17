@@ -6,11 +6,11 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 23:34:29 by tmidik            #+#    #+#             */
-/*   Updated: 2025/05/16 22:23:31 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/05/17 14:18:04 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 void	error_exit(char *msg)
 {

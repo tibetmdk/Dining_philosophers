@@ -6,11 +6,11 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 13:00:40 by tmidik            #+#    #+#             */
-/*   Updated: 2025/05/14 17:55:25 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/05/17 14:17:43 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 static int is_simulation_finished(t_philo *philo)
 {

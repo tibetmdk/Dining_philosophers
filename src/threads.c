@@ -6,11 +6,11 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 15:31:56 by tmidik            #+#    #+#             */
-/*   Updated: 2025/05/14 15:59:52 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/05/17 14:18:01 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 void	start_threads(t_data *data)
 {

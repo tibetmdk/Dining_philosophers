@@ -55,10 +55,13 @@ struct s_data
 	t_fork		*forks;
 	mtx_t		data_mutex;
 	mtx_t		print_mutex;
+	int			data_mtx_initialized;
+	int			print_mtx_initialized;
 };
 
 // -- UTIL FUNCTIONS --
-void	error_exit(char *msg);
+void	error_exit(char *msg, t_data *data);
+void	error_exit_minimal(char *msg, t_data *data);
 long	get_time(void);
 void	ft_usleep(long ms);
 void	print_action(t_philo *philo, char *msg);
@@ -69,5 +72,6 @@ void	init_data(t_data *data);
 void	start_threads(t_data *data);
 void	*dinner(void *data);
 void 	*monitor(void *arg);
+void	clean_all(t_data *data);
 
 #endif

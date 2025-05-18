@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 15:31:56 by tmidik            #+#    #+#             */
-/*   Updated: 2025/05/17 14:18:01 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/05/18 17:30:18 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ void	start_threads(t_data *data)
 		data->philos[i].last_meal_time = data->start_time;
 		if (pthread_create(&data->philos[i].thread, NULL,
 			dinner, &data->philos[i]) != 0)
-			error_exit("Failed to create philosopher thread!");
+			error_exit("Failed to create philosopher thread!", data);
 	}
 	if (pthread_create(&monitor_thread, NULL, monitor, data) != 0)
-		error_exit("Failed to create monitor thread!");
+		error_exit("Failed to create monitor thread!", data);
 	i = -1;
 	while (++i < data->philo_number)
 		pthread_join(data->philos[i].thread, NULL);

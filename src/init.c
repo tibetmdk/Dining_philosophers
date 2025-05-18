@@ -6,7 +6,7 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/11 00:27:41 by tmidik            #+#    #+#             */
-/*   Updated: 2025/05/17 14:17:50 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/05/18 17:13:05 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,19 @@ void	init_data(t_data *data)
 	i = -1;
 	data->philos = (t_philo *)malloc(sizeof(t_philo) * data->philo_number);
 	if (!data->philos)
-		error_exit("Problem in malloc!");// TODO : use free!!
+		error_exit("Problem in malloc!", data);// TODO : use free!!
 	data->simulation_finished = 0;
 	data->forks = (t_fork *)malloc(sizeof(t_fork) * data->philo_number);
 	if (!data->forks)
-		error_exit("Problem in malloc!");// TODO : use free!!
-	pthread_mutex_init(&data->data_mutex, NULL);
+		error_exit("Problem in malloc!", data);// TODO : use free!!
+	if (pthread_mutex_init(&data->data_mutex, NULL) == 0)
+		data->data_mtx_initialized = 1;
+	if (pthread_mutex_init(&data->print_mutex, NULL) == 0)
+		data->print_mtx_initialized = 1;
 	while (++i < data->philo_number)
 	{
 		if (pthread_mutex_init(&data->forks[i].fork, NULL) != 0)
-			error_exit("Mutex init failed!");
+			error_exit("Mutex init failed!", data);
 		data->forks[i].fork_id = i;
 	}
 	init_philos(data);

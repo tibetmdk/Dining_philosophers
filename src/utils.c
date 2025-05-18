@@ -6,15 +6,25 @@
 /*   By: tmidik <tibetmdk@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 23:34:29 by tmidik            #+#    #+#             */
-/*   Updated: 2025/05/17 14:18:04 by tmidik           ###   ########.fr       */
+/*   Updated: 2025/05/18 17:24:33 by tmidik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-void	error_exit(char *msg)
+void	error_exit(char *msg, t_data *data)
 {
+	if (data)
+		clean_all(data);
 	printf(RED"%s"RST, msg);
+	exit(EXIT_FAILURE);
+}
+
+void	error_exit_minimal(char *msg, t_data *data)
+{
+	if (data)
+		free(data);
+	printf(RED"%s\n"RST, msg);
 	exit(EXIT_FAILURE);
 }
 
